@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["JP Camargo"]
   spec.email         = ["jpcamargo+github@gmail.com"]
 
-  spec.summary       = %q{Notify errors to honeybadger when running shoryuken without rails.}
-  spec.description   = %q{Notify errors to honeybadger when running shoryuken without rails.}
+  spec.summary       = %q{Notify errors to honeybadger when running shoryuken standalone.}
+  spec.description   = %q{Notify errors to honeybadger when running shoryuken standalone.}
   spec.homepage      = "http://github.com/jao/shoryuken-honeybadger"
   spec.license       = "MIT"
 
