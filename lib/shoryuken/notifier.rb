@@ -18,7 +18,7 @@ module Shoryuken
         Honeybadger.context(worker: worker.class, queue: queue, sqs_message: sqs_msg, body: body)
         yield
       rescue => e
-        Shoryuken.logger.error "'#{worker.class} #{e.class}', message: '#{e.message}'"
+        Shoryuken.logger.error "'#{worker.class} #{e.class}', #{e.message}"
         Honeybadger.notify(e)
         raise e
       end
