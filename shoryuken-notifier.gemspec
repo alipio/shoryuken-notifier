@@ -34,5 +34,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'simplecov-rcov'
 
   spec.add_dependency "shoryuken"
-  spec.add_dependency "honeybadger", '~> 2.0.0'
+  spec.add_dependency "honeybadger", '>= 2.0.0'
 end
