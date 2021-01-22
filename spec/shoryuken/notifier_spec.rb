@@ -48,5 +48,14 @@ describe Shoryuken::Notifier do
         subject::Hook.new.call(TestWorker.new, queue, sqs_msg, sqs_msg.body) { raise 'Error' }
       }.to raise_error(RuntimeError, 'Error')
     end
+
+    it 'clears honeybadger global context' do
+      expect(Honeybadger).to receive(:context).with(worker: TestWorker, queue: queue, sqs_message: sqs_msg, body: sqs_msg.body)
+      expect(Honeybadger).to receive(:clear!)
+
+      expect {
+        subject::Hook.new.call(TestWorker.new, queue, sqs_msg, sqs_msg.body) { raise 'Error' }
+      }.to raise_error(RuntimeError, 'Error')
+    end
   end
 end

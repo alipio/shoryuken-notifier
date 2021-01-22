@@ -38,10 +38,6 @@ RSpec.configure do |config|
     Shoryuken::Client.class_variable_set :@@visibility_timeouts, {}
 
     Shoryuken::Client.sqs = nil
-    Shoryuken::Client.sqs_resource = nil
-    Shoryuken::Client.sns = nil
-
-    Shoryuken.queues.clear
 
     Shoryuken.options[:concurrency] = 1
     Shoryuken.options[:delay]       = 1

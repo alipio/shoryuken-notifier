@@ -21,6 +21,8 @@ module Shoryuken
         Shoryuken.logger.error "'#{worker.class} #{e.class}', #{e.message}"
         Honeybadger.notify(e)
         raise e
+      ensure
+        Honeybadger.clear!
       end
     end
   end
